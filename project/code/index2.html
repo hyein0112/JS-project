@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function print(){
+            var arr=[6],brr=[6];
+
+            for(i=0;i<6;i++){
+                arr[i]=Math.floor(Math.random() * 45)+1;
+                for(j=0;j<brr.length;j++){
+                    if(brr[j]==arr[i]){arr[i]=Math.floor(Math.random() * 45)+1;j--;}
+                }
+                brr[i]=arr[i];
+            } 
+            alert("로또번호는"+arr);
+            document.write('<h3>이번주 로또번호:'+arr+'</h3>');
+        }
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="print()">로또번호</button>
+</body>
+</html>
